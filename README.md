@@ -1,8 +1,8 @@
-# Text2NeRF: Text-Driven 3D Scene Generation with Neural Radiance Fields
+# HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion
 
-This is the repository that contains source code for the [Text2NeRF Home Page](https://eckertzhang.github.io/Text2NeRF.github.io/).
+This is the repository that contains source code for the [HumanRef Home Page](https://eckertzhang.github.io/HumanRef.github.io/).
 
-If you find Text2NeRF useful for your work please cite:
+If you find HumanRef useful for your work please cite:
 ```
 ...
 ```
