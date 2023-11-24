@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion">
+  <meta name="keywords" content="HumanRef, Text2NeRF, FDNeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/EZ.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion</h1>
+          <!-- <h1 class="title is-3">CVPR 2024</h1> -->
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://eckertzhang.github.io/">Jingbo Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://qzhang-cv.github.io/">Qi Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://yanpei.me/">Yanpei Cao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://liaojing.github.io/html/">Jing Liao</a><sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Tencent AI Lab</span>
+          </div> -->
+          <div class="is-size-5 publication-authors">
+            Anonymous Submission
+          </div> 
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/4R3iaamYwa8"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/eckertzhang/HumanRef"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-std1">
+          <img src="./static/video/std1.gif">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Teaser. -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div>
+        <img src="./static/images/teaser.png" alt="teaser" class="center">
+      </div>
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <h2 class="subtitle has-text">
+        HumanRef, a reference-guided 3D human generation framework, is capable of generating 3D clothed human with realistic, view-consistent texture and geometry from a single image input.
+      </h2>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body" style="background-color: white;">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item" style="margin: 0px; overflow: auto; border:0px; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline height="70%" width="70%">
+            <source src="./static/video/000_garden.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item" style="margin: 0px; overflow: auto; border:0px; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline height="70%" width="70%">
+            <source src="./static/video/303_living.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item" style="margin: 0px; overflow: auto; border:0px; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline height="70%" width="70%">
+            <source src="./static/video/700_cabin.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item" style="margin: 0px; overflow: auto; border:0px; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline height="70%" width="70%">
+            <source src="./static/video/502_train.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item" style="margin: 0px; overflow: auto; border:0px; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline height="70%" width="70%">
+            <source src="./static/video/104_bedroom.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <!-- <div class="container"> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generating a 3D human model from a single reference image is challenging because it requires 
+            inferring textures and geometries in invisible views while maintaining consistency with the 
+            reference image. Previous methods utilizing 3D generative models are limited by the availability 
+            of 3D training data. Optimization-based methods that lift text-to-image diffusion models to 3D 
+            generation often fail to preserve the texture details of the reference image, resulting in 
+            inconsistent appearances in different views. In this paper, we propose HumanRef, a 3D human 
+            generation framework from a single-view input. To ensure the generated 3D model is photorealistic 
+            and consistent with the input image, HumanRef introduces a novel method called reference-guided 
+            score distillation sampling (Ref-SDS), which effectively incorporates image guidance into the 
+            generation process. Furthermore, we introduce region-aware attention to Ref-SDS, ensuring accurate 
+            correspondence between different body regions. Experimental results demonstrate that HumanRef 
+            outperforms state-of-the-art methods in generating 3D clothed humans with fine geometry, photorealistic 
+            textures, and view-consistent appearances. We will make our code and model available upon acceptance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Pipeline</h2>
+        
+        <div>
+          <img src="./static/images/pipeline.png" alt="method" class="center">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Overview of our proposed HumanRef for 3D clothed human generation from a single input image. Given an 
+            input image, we initially extract its text caption, SMPL-X body, front and back normal maps, and silhouette 
+            using estimators. A neural SDF network, initialized with the estimated SMPL-X body, is then employed for 
+            optimization-based generation. To maintain appearance and pose consistency, we use the input image, silhouette, 
+            and normal maps as optimization constraints. For invisible regions, we introduce Ref-SDS, a method that 
+            distills realistic textures from a pretrained diffusion model, yielding sharp, realistic 3D clothed humans 
+            that align with the input image.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-desktop" style="text-align: center;">
+        <br />
+        <h2 class="title is-3">Results</h2>
+        <video poster="" autoplay controls muted loop playsinline height="100%" width="100%">
+          <source src="./static/video/homepage_video1.mp4"
+                  type="video/mp4">
+        </video>
+        <video poster="" autoplay controls muted loop playsinline height="100%" width="100%">
+          <source src="./static/video/homepage_video2.mp4"
+                  type="video/mp4">
+        </video>
+        <video poster="" autoplay controls muted loop playsinline height="100%" width="100%">
+          <source src="./static/video/homepage_video3.mp4"
+                  type="video/mp4">
+        </video>
+        <br />
+
+      </div>
+    </div>
+
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <br />
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4R3iaamYwa8?si=wN_HF-X7_wwKwbE0" 
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen></iframe>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhang2022fdnerf,
+      title={FDNeRF: Few-shot Dynamic Neural Radiance Fields for Face Reconstruction and Expression Editing},
+      author={Zhang, Jingbo and Li, Xiaoyu and Wan, Ziyu and Wang, Can and Liao, Jing},
+      journal={arXiv preprint arXiv:2208.05751},
+      year={2022}
+    }</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="content has-text-centered">
+      <a class="icon-link"
+        href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" 
+        href="https://github.com/eckertzhang/HumanRef" 
+        class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+
+            The <a href="https://github.com/nerfies/nerfies.github.io">source code</a> for the website 
+            was taken from Nerfies. We appreciate the authors sharing the templates with us.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
